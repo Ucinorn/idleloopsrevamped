@@ -68,9 +68,21 @@ Items, on the other hand, are aquired in an area and kept only in that loop. Som
 
 If an action is attempted without the require
 
+# Time and Time Dilation
+
+We have done our best to use realistic times for actions in our action description, but actually waiting that long is not realistic. Instead we use time dilation/ 
+
+There is a game loop that runs on a 100ms tick cycle, each tick equals 1 second in the game: so 1 second in real time equals 10 seconds in game time: 6 seconds equals a minute. With area times in the 5-10 minite range, a single loop should take less than a minute in realtime. 
+
+Some areas have larger time frames, so time dilation is higher: 
+
+This is longer than the default loop time of Idle Loops, however in that game loops can often take multiple minutes due to how much it utilises Mana to extend loop time. We are sometimes doing something similar but generally are aiming for more fixed loop times. 
+
+
 # Offline Progress
 
-Time spent away from the game is collected as time shards, 1 for each second spent away, up to a maximum of 24 hours. Time shards can be used to speed up the game using controls on the time control bar: 1 per second to double time speed, or 4 per second to quadruple time speed. 
+Time spent away from the game is collected as time shards, 1 for each second spent away, up to a maximum of 24 hours. Time shards can be spent to increase time dilation while playing: 
+
 
 # Areas
 Below is a list of areas and their goals. we will full spec out the first as a template, others to follow in more detail once we have nailed the core mechanics. 
@@ -125,18 +137,22 @@ Time: 5 minutes
 ## Wizard Tower
 
 An interlude area where there is not much to do. The Door to the tower is locked, and you must aquire 3 amulets to open it. You can spend your small reserve of mana to eleport to new areas. The player will return here after completing all 3 areas, reinforcing the concept of returning to areas to progress. 
+After collecting the amulets the player can open the door, to what they hope is a confrontation with the Wizard. The Tower is a very large area, and both time and mana is given generously
+
+Time: 15 minutes
 
 ## Mana Cave
 
-You find yourself in a cave filled with glowing mushrooms. The area has a very short time franme, so extending youyr time with Mana is essential. 
+You find yourself in a cave filled with glowing mushrooms. The area has a very short time franme, so extending youyr time with Mana is essential. The actions in the cave area ll about gathering and manipulating mana, to give you enough time to find and collect the Amulet. Should teach the player the power of mana in limited time zones. 
 
 Task: Find the Red Amulet
 Time: 1 minute
 
 ## Desert
 
-You find yourself in an endless desert, under the hot sun. Here you have a whole day, so time dilation is a major factor. The area is seperated into day and night, with different effects: players will bake and tire in the sun, then freeze at night. There are unique penalties for different action
-Due to time dilation, mana does not matter for extending your time. 
+You find yourself in an endless desert, under the hot sun. Here you have a whole day, so time dilation is very, very high. The area is seperated into day and night, with different effects: players will bake and tire in the sun, then freeze at night. Each penalises different actions and attributs, encouraging careful planning of your actions. 
+
+Due to time dilation, mana does not matter for extending your time, its basically worthless so should be used for other things.
 
 Task: Find the Yellow Amulet
 Time: 1 Day
@@ -144,7 +160,7 @@ Time Dilation: 1000X
 
 ## Underwater
 
-You are underwater. In this area there is no time limit, other than your ability to hold your breath. Every second you gain a mounting penalty and and a chance to give up and drown. Teahces the player than time is not the only resource
+You are underwater. In this area there is no time limit, other than your ability to hold your breath. Every second you gain a mounting penalty and and a chance to give up and drown. Teaches the player about mounting environment 
 
 Task: Find the Blue Amulet
 Time: None - end on death
