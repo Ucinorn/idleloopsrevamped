@@ -1,6 +1,24 @@
 # idleloopsrevamped
 A remake/revamp of the classic Idle Loops, with a bunch of QOL features and streamlining. Idle Loops: https://lloyd-delacroix.github.io/omsi-loops/
 
+# Tech Stack 
+
+* Vue 3 
+* Pinia central store
+* Bootstrap 5 for CSS
+
+# Development Guidlines
+
+* Minimal code: if a single function can do it, keep it that way
+* Single store
+* Stores are data only: components should subscribe to the store and react to it internally
+* No game logic in store: avoid putting login the the store unless absolutely neccesary: we can minipulate store as long as that location or compoenent is the only place we do so 
+* Bootstrap as styling only: no custom CSS unless absolutely neccesary
+* Use constants where possible, in the store
+* Reusable logic: actions, the consequences of actions, multipliers and effects of attribites should be implemented in a modular fashion wherever possible
+** Specifically multipliers: we want to able to be fully transparent about numbers and what contributes to them: so we need to be able to accurately understand layers of multipleirs and whethee they are additive or mulitplicative
+
+
 # Game Story
 
 The player is a peasant who lives in the woods as an apprentice woodsman. They come across a glade with a wooden stool in the middle of it. On the stool is a small letter. 
